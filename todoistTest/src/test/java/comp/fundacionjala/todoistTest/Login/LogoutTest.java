@@ -19,12 +19,12 @@ public class LogoutTest {
         homePage = new LoginFrame().setTxtEmail("es.henrry@gmail.com")
                                     .setTxtPassword("TodoIst1234")
                                     .clickOnBtnLogin();
-        assertTrue(homePage.getBtnInboxFilter().isDisplayed());
+        assertTrue(homePage.getSideBar().getBtnInboxFilter().isDisplayed());
     }
 
     @Test
     public void testLogOut() {
-        indexPage=homePage.clickOnBtnSettingsIcon()
+        indexPage=homePage.getToolBar().clickOnBtnSettingsIcon()
                           .clickOnBtnLogOutOptionMenu();
         assertTrue(indexPage.getImgLogo().isDisplayed());
 

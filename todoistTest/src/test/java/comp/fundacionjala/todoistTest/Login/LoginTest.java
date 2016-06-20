@@ -18,6 +18,6 @@ public class LoginTest {
         homePage = new LoginFrame().setTxtEmail("es.henrry@gmail.com")
                 .setTxtPassword("TodoIst1234")
                 .clickOnBtnLogin();
-        assertTrue(homePage.getBtnInboxFilter().isDisplayed());
+        assertTrue(homePage.getSideBar().getBtnInboxFilter().isDisplayed());
     }
 }

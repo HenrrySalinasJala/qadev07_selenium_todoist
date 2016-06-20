@@ -11,11 +11,12 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({CreateProjectTest.class, UpdateProjectTest.class, DeleteProjectTest.class})
 public class BaseTest {
-
+    protected static final String username="es.henrry@gmail.com";
+    protected static final String password="TodoIst1234";
     @BeforeClass
     public static void setUp() {
 
-        HomePage homePage = LoginFrame.login("es.henrry@gmail.com", "TodoIst1234");
+        HomePage homePage = LoginFrame.login(username, password);
     }
 
     @AfterClass

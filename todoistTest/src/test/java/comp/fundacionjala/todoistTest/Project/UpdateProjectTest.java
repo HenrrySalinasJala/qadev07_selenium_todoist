@@ -18,7 +18,7 @@ public class UpdateProjectTest {
     public void setUp() {
 
         homePage = LoginFrame.login("es.henrry@gmail.com", "TodoIst1234");
-        homePage.clickOnLnkAddProject()
+        homePage.getSideBar().clickOnLnkAddProject()
                 .setTxtProjectName(projectName)
                 .clickOnBtnAddProject();
 
@@ -26,19 +26,19 @@ public class UpdateProjectTest {
 
     @Test
     public void testUpdateProject() {
-        homePage.locateProjectByName(projectName)
+        homePage.getSideBar().locateProjectByName(projectName)
                 .openProjectContextMenu()
                 .clickOnBtnUpdateProjectContextOptionMenu()
                 .setTxtProjectName(expectedProjectNameUpdated)
                 .clickOnBtnAddProject()
                 .locateProjectByName(expectedProjectNameUpdated);
 
-        assertEquals(expectedProjectNameUpdated,homePage.getLblMenuProjectName().getText());
+        assertEquals(expectedProjectNameUpdated,homePage.getSideBar().getLblMenuProjectName().getText());
 
     }
     @After
     public void tearDown(){
-        homePage.locateProjectByName(expectedProjectNameUpdated)
+        homePage.getSideBar().locateProjectByName(expectedProjectNameUpdated)
                 .openProjectContextMenu()
                 .clickOnBtnDeleteProjectContextOptionMenu()
                 .clickOnBtnConfirmDelete();

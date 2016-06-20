@@ -16,17 +16,17 @@ public class DeleteProjectTest {
     public void setUp() {
 
         homePage = LoginFrame.login("es.henrry@gmail.com", "TodoIst1234");
-        homePage.clickOnLnkAddProject()
+        homePage.getSideBar().clickOnLnkAddProject()
                 .setTxtProjectName(projectName)
                 .clickOnBtnAddProject();
     }
 
     @Test
     public void testDeleteProject() {
-        homePage.locateProjectByName(projectName)
+        homePage.getSideBar().locateProjectByName(projectName)
                 .openProjectContextMenu()
                 .clickOnBtnDeleteProjectContextOptionMenu()
                 .clickOnBtnConfirmDelete();
-        assertFalse(homePage.webElementExists(homePage.getLblMenuProjectName()));
+        assertFalse(homePage.webElementExists(homePage.getSideBar().getLblMenuProjectName()));
     }
 }

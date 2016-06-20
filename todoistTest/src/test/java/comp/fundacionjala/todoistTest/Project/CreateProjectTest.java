@@ -1,5 +1,6 @@
 package comp.fundacionjala.todoistTest.Project;
 
+import comp.fundacionjala.todoistTest.BaseTest;
 import comp.fundacionjala.todoistTest.HomePage;
 import comp.fundacionjala.todoistTest.LoginFrame;
 import org.junit.After;
@@ -8,24 +9,28 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-public class CreateProjectTest {
+public class CreateProjectTest extends BaseTest{
 
     private HomePage homePage;
     private String projectName="project test";
 
     @Before
-    public void setUp() {
-        homePage = LoginFrame.login("es.henrry@gmail.com", "TodoIst1234");
+    public void setUpTest() {
+        homePage = LoginFrame.login(username, password);
     }
 
     @Test
     public void testCreateProject() {
-        homePage.clickOnLnkAddProject().setTxtProjectName(projectName).clickOnBtnAddProject();
-        assertTrue(homePage.getLnkProjectName().isDisplayed());
+        homePage.getSideBar()
+                .clickOnLnkAddProject()
+                .setTxtProjectName(projectName)
+                .clickOnBtnAddProject();
+        assertTrue(homePage.getProjectContainer().getLnkProjectName().isDisplayed());
     }
     @After
-    public void tearDown(){
-        homePage.locateProjectByName(projectName)
+    public void tearDownTest(){
+        homePage.getSideBar()
+                .locateProjectByName(projectName)
                 .openProjectContextMenu()
                 .clickOnBtnDeleteProjectContextOptionMenu()
                 .clickOnBtnConfirmDelete();

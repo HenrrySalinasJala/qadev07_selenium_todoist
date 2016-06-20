@@ -32,7 +32,7 @@ public class LoginFrame extends BasePage {
     public static HomePage login(String email, String password) {
         String lblEmail;
         TodoistPage todoistPage = new TodoistPage();
-        SettingsFrame settingsFrame = new HomePage().clickOnBtnSettingsIcon()
+        SettingsFrame settingsFrame = new HomePage().getToolBar().clickOnBtnSettingsIcon()
                 .clickOnBtnTodoistSettingsOptionMenu();
         lblEmail = settingsFrame.clickOnTabAccount().getLblEmail();
 
