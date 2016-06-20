@@ -11,8 +11,10 @@ public class SettingsFrame extends BasePage {
     @FindBy(xpath = "//*[@id=\"user_info\"]/dl[2]/dd/span")
     private WebElement lblEmail;
 
-    @FindBy(xpath = "//id('tabs')//a[text()='Account']")
+    @FindBy(xpath = "//*[@id=\"tabs\"]/li[2]/a")
     private WebElement tabAccount;
+    @FindBy(className = "cmp_small_close")
+    private WebElement imgCloseSettingsWindow;
     
     public SettingsFrame clickOnTabAccount() {
         
@@ -40,4 +42,12 @@ public class SettingsFrame extends BasePage {
         }
         return email;
     }
+
+    public HomePage closeSettingsWindow() {
+        driver.switchTo().defaultContent();
+        imgCloseSettingsWindow.click();
+        return new HomePage();
+    }
+
+
 }

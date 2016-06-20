@@ -31,32 +31,19 @@ public class LoginFrame extends BasePage {
 
     public static HomePage login(String email, String password) {
         String lblEmail;
-        HomePage homePage = null;
         TodoistPage todoistPage = new TodoistPage();
         SettingsFrame settingsFrame = new HomePage().clickOnBtnSettingsIcon()
                 .clickOnBtnTodoistSettingsOptionMenu();
         lblEmail = settingsFrame.clickOnTabAccount().getLblEmail();
+
         if (!lblEmail.equals(email)) {
 
             LoginFrame loginFrame = todoistPage.clickOnBtnLogin();
-            homePage = loginFrame.setTxtEmail(email).setTxtPassword(password).clickOnBtnLogin();
+            return  loginFrame.setTxtEmail(email).setTxtPassword(password).clickOnBtnLogin();
+        }else{
+            return settingsFrame.closeSettingsWindow();
         }
 
-        return homePage;
     }
-    public static HomePage logOut(String email, String password) {
-        String lblEmail;
-        HomePage homePage = null;
-        TodoistPage todoistPage = new TodoistPage();
-        SettingsFrame settingsFrame = new HomePage().clickOnBtnSettingsIcon()
-                .clickOnBtnTodoistSettingsOptionMenu();
-        lblEmail = settingsFrame.clickOnTabAccount().getLblEmail();
-        if (!lblEmail.equals(email)) {
 
-            LoginFrame loginFrame = todoistPage.clickOnBtnLogin();
-            homePage = loginFrame.setTxtEmail(email).setTxtPassword(password).clickOnBtnLogin();
-        }
-
-        return homePage;
-    }
 }
