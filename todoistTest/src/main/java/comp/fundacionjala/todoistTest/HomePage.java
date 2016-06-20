@@ -33,8 +33,7 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "/html/body/div[15]/table/tbody/tr[17]/td/div/span")
     private WebElement btnLogOutOptionMenu;
-
-
+    
     @FindBy(className = "GB_frame")
     private WebElement settingsParentFrame;
 

@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
 
-public class UpdateProjectTestTest {
+public class DeleteProjectTest {
 
     private HomePage homePage;
     private String projectName = "To Test";
