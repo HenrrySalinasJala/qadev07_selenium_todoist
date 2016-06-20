@@ -7,15 +7,18 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-public class CreateProject {
+public class CreateProjectTest {
+
     private HomePage homePage;
-@Before
-public void setUp(){
-    homePage=LoginFrame.login("es.henrry@gmail.com","TodoIst1234");
-}
+
+    @Before
+    public void setUp() {
+        homePage = LoginFrame.login("es.henrry@gmail.com", "TodoIst1234");
+    }
+
     @Test
-    public void testCreateProject(){
-        homePage.clickOnLnkAddProject().setTxtNewProjectName("example 1").clickOnBtnAddProject();
+    public void testCreateProject() {
+        homePage.clickOnLnkAddProject().setTxtProjectName("example 1").clickOnBtnAddProject();
         assertTrue(homePage.getLnkProjectName().isDisplayed());
     }
 }

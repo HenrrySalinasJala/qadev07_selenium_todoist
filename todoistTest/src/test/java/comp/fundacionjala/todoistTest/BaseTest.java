@@ -1,4 +1,6 @@
 package comp.fundacionjala.todoistTest;
+
+import comp.fundacionjala.todoistTest.Login.LoginTest;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
@@ -17,5 +19,4 @@ public class BaseTest {
     public static void tearDown() {
         DriverManager.getInstance().getDriver().quit();
     }
-
 }
