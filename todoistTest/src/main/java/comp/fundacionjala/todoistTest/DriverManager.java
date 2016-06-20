@@ -9,7 +9,7 @@ public class DriverManager {
 
     public static final int IMPLICIT_WAIT_TIME = 7;
     public static final int IMPLICIT_FAIL_WAIT_TIME = 4;
-    static String driverPath = ".\\lib\\";
+    private static String driverPath = ".\\lib\\";
     private static DriverManager instance;
     private WebDriver driver;
 
