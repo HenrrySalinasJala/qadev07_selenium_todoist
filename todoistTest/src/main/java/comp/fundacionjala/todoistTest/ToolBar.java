@@ -1,9 +1,10 @@
 package comp.fundacionjala.todoistTest;
 
-import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.concurrent.TimeUnit;
 
 public class ToolBar extends BasePage {
 
@@ -51,8 +52,8 @@ public class ToolBar extends BasePage {
         return settings;
     }
 
-    public TodoistPage clickOnBtnLogOutOptionMenu() {
+    public LogOutPage clickOnBtnLogOutOptionMenu() {
         btnLogOutOptionMenu.click();
-        return new TodoistPage();
+        return new LogOutPage();
     }
 }

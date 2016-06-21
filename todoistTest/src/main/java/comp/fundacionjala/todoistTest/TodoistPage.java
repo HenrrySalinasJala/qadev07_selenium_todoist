@@ -16,9 +16,6 @@ public class TodoistPage extends BasePage {
     @FindBy(id = "GB_frame")
     private WebElement loginFrame;
 
-    @FindBy(className = "logo")
-    private WebElement imgLogo;
-
     public TodoistPage() {
         goTo(BASE_URL);
     }
@@ -37,7 +34,4 @@ public class TodoistPage extends BasePage {
         return new LoginFrame();
     }
 
-    public WebElement getImgLogo() {
-        return imgLogo;
-    }
 }

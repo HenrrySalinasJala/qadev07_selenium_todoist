@@ -1,10 +1,11 @@
 package comp.fundacionjala.todoistTest.Project;
 
-import comp.fundacionjala.todoistTest.HomePage;
-import comp.fundacionjala.todoistTest.LoginFrame;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import comp.fundacionjala.todoistTest.HomePage;
+import comp.fundacionjala.todoistTest.LoginFrame;
 
 import static org.junit.Assert.assertEquals;
 

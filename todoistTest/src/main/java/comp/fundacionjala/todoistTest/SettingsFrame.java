@@ -1,9 +1,10 @@
 package comp.fundacionjala.todoistTest;
 
-import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.concurrent.TimeUnit;
 
 public class SettingsFrame extends BasePage {
 
