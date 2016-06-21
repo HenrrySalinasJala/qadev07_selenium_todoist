@@ -6,12 +6,12 @@ public class HomePage extends BasePage {
 
     private ToolBar toolBar;
 
-    private  ProjectContainer projectContainer;
+    private ProjectContainer projectContainer;
 
-    public HomePage(){
-        toolBar=new ToolBar();
-        sideBar=new SideBar();
-        projectContainer=new ProjectContainer();
+    public HomePage() {
+        toolBar = new ToolBar();
+        sideBar = new SideBar();
+        projectContainer = new ProjectContainer();
     }
 
     public SideBar getSideBar() {

@@ -9,12 +9,16 @@ import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 
 public class LogoutTest {
+
     private TodoistPage todoistPage;
+
     private HomePage homePage;
+
     private TodoistPage indexPage;
+
     @Before
-    public void setUp(){
-        todoistPage= new TodoistPage();
+    public void setUp() {
+        todoistPage = new TodoistPage();
         todoistPage.clickOnBtnLogin();
         homePage = new LoginFrame().setTxtEmail("es.henrry@gmail.com")
                                     .setTxtPassword("TodoIst1234")
@@ -24,9 +28,9 @@ public class LogoutTest {
 
     @Test
     public void testLogOut() {
-        indexPage=homePage.getToolBar().clickOnBtnSettingsIcon()
-                          .clickOnBtnLogOutOptionMenu();
+        indexPage = homePage.getToolBar()
+                            .clickOnBtnSettingsIcon()
+                            .clickOnBtnLogOutOptionMenu();
         assertTrue(indexPage.getImgLogo().isDisplayed());
-
     }
 }

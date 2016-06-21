@@ -8,12 +8,13 @@ import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 
 public class LoginTest {
-    private TodoistPage todoistPage;
-    private HomePage homePage;
+
     @Test
     public void testLogin() {
+        TodoistPage todoistPage;
 
-        todoistPage= new TodoistPage();
+        HomePage homePage;
+        todoistPage = new TodoistPage();
         todoistPage.clickOnBtnLogin();
         homePage = new LoginFrame().setTxtEmail("es.henrry@gmail.com")
                 .setTxtPassword("TodoIst1234")

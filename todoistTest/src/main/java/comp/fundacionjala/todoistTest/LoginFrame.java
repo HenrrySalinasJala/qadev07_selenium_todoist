@@ -7,8 +7,10 @@ public class LoginFrame extends BasePage {
 
     @FindBy(id = "email")
     private WebElement txtEmail;
+
     @FindBy(id = "password")
     private WebElement txtPassword;
+
     @FindBy(xpath = "/html/body/div[1]/div/form/dl/dd[3]/a")
     private WebElement btnLogin;
 
@@ -39,11 +41,9 @@ public class LoginFrame extends BasePage {
         if (!lblEmail.equals(email)) {
 
             LoginFrame loginFrame = todoistPage.clickOnBtnLogin();
-            return  loginFrame.setTxtEmail(email).setTxtPassword(password).clickOnBtnLogin();
-        }else{
+            return loginFrame.setTxtEmail(email).setTxtPassword(password).clickOnBtnLogin();
+        } else {
             return settingsFrame.closeSettingsWindow();
         }
-
     }
-
 }

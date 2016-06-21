@@ -1,12 +1,11 @@
 package comp.fundacionjala.todoistTest;
 
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ToolBar extends BasePage{
+public class ToolBar extends BasePage {
 
     @FindBy(id = "gear_holder")
     private WebElement btnSettingsIcon;
@@ -51,6 +50,7 @@ public class ToolBar extends BasePage{
         }
         return settings;
     }
+
     public TodoistPage clickOnBtnLogOutOptionMenu() {
         btnLogOutOptionMenu.click();
         return new TodoistPage();

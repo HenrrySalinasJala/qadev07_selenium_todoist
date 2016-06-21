@@ -1,16 +1,19 @@
 package comp.fundacionjala.todoistTest;
 
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class DriverManager {
 
     public static final int IMPLICIT_WAIT_TIME = 7;
+
     public static final int IMPLICIT_FAIL_WAIT_TIME = 4;
+
     private static String driverPath = ".\\lib\\";
+
     private static DriverManager instance;
+
     private WebDriver driver;
 
     private DriverManager() {

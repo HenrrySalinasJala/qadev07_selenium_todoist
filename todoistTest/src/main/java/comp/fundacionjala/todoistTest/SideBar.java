@@ -1,15 +1,12 @@
 package comp.fundacionjala.todoistTest;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class SideBar  extends  BasePage{
-
+public class SideBar extends BasePage {
 
     @FindBy(id = "filter_inbox")
     private WebElement btnInboxFilter;
@@ -22,9 +19,6 @@ public class SideBar  extends  BasePage{
 
     @FindBy(className = "sel_richtext_editor")
     private WebElement txtProjectName;
-
-
-
 
     @FindBy(id = "menu_delete_text")
     private WebElement btnDeleteProjectContextOptionMenu;
@@ -60,10 +54,6 @@ public class SideBar  extends  BasePage{
         txtProjectName.sendKeys(projectName);
         return this;
     }
-
-
-
-
 
     public SideBar locateProjectByName(String projectName) {
         String xpath = new StringBuilder().append("//ul[@id='project_list']/descendant::span[text()='")
@@ -103,8 +93,4 @@ public class SideBar  extends  BasePage{
         btnConfirmDelete.click();
         return this;
     }
-
-
-
-
 }

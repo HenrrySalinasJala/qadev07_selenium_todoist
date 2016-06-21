@@ -1,7 +1,6 @@
 package comp.fundacionjala.todoistTest;
 
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,6 +12,7 @@ public class SettingsFrame extends BasePage {
 
     @FindBy(xpath = "//*[@id=\"tabs\"]/li[2]/a")
     private WebElement tabAccount;
+
     @FindBy(className = "cmp_small_close")
     private WebElement imgCloseSettingsWindow;
     
@@ -48,6 +48,4 @@ public class SettingsFrame extends BasePage {
         imgCloseSettingsWindow.click();
         return new HomePage();
     }
-
-
 }

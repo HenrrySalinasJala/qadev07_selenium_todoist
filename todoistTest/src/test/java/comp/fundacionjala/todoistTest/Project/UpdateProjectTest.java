@@ -11,34 +11,38 @@ import static org.junit.Assert.assertEquals;
 public class UpdateProjectTest {
 
     private HomePage homePage;
-    private  String projectName="To Test";
-    private  String expectedProjectNameUpdated="To Test Updated";
+
+    private String projectName = "To Test";
+
+    private String expectedProjectNameUpdated = "To Test Updated";
 
     @Before
     public void setUp() {
-
-        homePage = LoginFrame.login("es.henrry@gmail.com", "TodoIst1234");
-        homePage.getSideBar().clickOnLnkAddProject()
+        final String username = "es.henrry@gmail.com";
+        final String password = "TodoIst1234";
+        homePage = LoginFrame.login(username, password);
+        homePage.getSideBar()
+                .clickOnLnkAddProject()
                 .setTxtProjectName(projectName)
                 .clickOnBtnAddProject();
-
     }
 
     @Test
     public void testUpdateProject() {
-        homePage.getSideBar().locateProjectByName(projectName)
+        homePage.getSideBar()
+                .locateProjectByName(projectName)
                 .openProjectContextMenu()
                 .clickOnBtnUpdateProjectContextOptionMenu()
                 .setTxtProjectName(expectedProjectNameUpdated)
                 .clickOnBtnAddProject()
                 .locateProjectByName(expectedProjectNameUpdated);
-
-        assertEquals(expectedProjectNameUpdated,homePage.getSideBar().getLblMenuProjectName().getText());
-
+        assertEquals(expectedProjectNameUpdated, homePage.getSideBar().getLblMenuProjectName().getText());
     }
+
     @After
-    public void tearDown(){
-        homePage.getSideBar().locateProjectByName(expectedProjectNameUpdated)
+    public void tearDown() {
+        homePage.getSideBar()
+                .locateProjectByName(expectedProjectNameUpdated)
                 .openProjectContextMenu()
                 .clickOnBtnDeleteProjectContextOptionMenu()
                 .clickOnBtnConfirmDelete();
