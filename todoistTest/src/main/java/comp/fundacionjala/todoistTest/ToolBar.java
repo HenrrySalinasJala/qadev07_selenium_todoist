@@ -4,9 +4,11 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import comp.fundacionjala.todoistTest.Task.ITaskForm;
+import comp.fundacionjala.todoistTest.Task.TaskForm;
 import java.util.concurrent.TimeUnit;
 
-public class ToolBar extends BasePage {
+public class ToolBar extends BasePage implements ITaskForm {
 
     @FindBy(id = "gear_holder")
     private WebElement btnSettingsIcon;
@@ -22,6 +24,9 @@ public class ToolBar extends BasePage {
 
     @FindBy(id = "GB_frame")
     private WebElement settingsFrame;
+
+    @FindBy(css=".icon.fixed_pos.cmp_light_add_task")
+    private WebElement quickAddTaskIcon;
 
     public ToolBar clickOnBtnSettingsIcon() {
 
@@ -55,5 +60,14 @@ public class ToolBar extends BasePage {
     public LogOutPage clickOnBtnLogOutOptionMenu() {
         btnLogOutOptionMenu.click();
         return new LogOutPage();
+    }
+
+    public TaskForm clickOnQuickAddTaskIcon() {
+        quickAddTaskIcon.click();
+        return new TaskForm();
+    }
+
+    public ProjectContainer createTask(String taskName) {
+        return clickOnQuickAddTaskIcon().createTask(taskName);
     }
 }

@@ -3,6 +3,8 @@ package comp.fundacionjala.todoistTest;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
+
 public class TodoistPage extends BasePage {
 
     private static String BASE_URL = "https://.en.todoist.com";
@@ -28,6 +30,7 @@ public class TodoistPage extends BasePage {
     }
 
     public LoginFrame clickOnBtnLogin() {
+        wait.until(visibilityOf(btnLogin));
         btnLogin.click();
         driver.switchTo().frame(parentLoginFrame);
         driver.switchTo().frame(loginFrame);

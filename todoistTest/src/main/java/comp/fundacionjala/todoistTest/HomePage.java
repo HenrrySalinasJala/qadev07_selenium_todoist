@@ -1,5 +1,7 @@
 package comp.fundacionjala.todoistTest;
 
+import comp.fundacionjala.todoistTest.Task.ITaskForm;
+
 public class HomePage extends BasePage {
 
     private SideBar sideBar;
@@ -24,5 +26,9 @@ public class HomePage extends BasePage {
 
     public ProjectContainer getProjectContainer() {
         return projectContainer;
+    }
+
+    public ProjectContainer createTask(ITaskForm taskForm,String taskName) {
+        return taskForm.createTask(taskName);
     }
 }

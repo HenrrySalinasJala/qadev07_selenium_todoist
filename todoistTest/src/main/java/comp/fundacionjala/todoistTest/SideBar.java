@@ -6,6 +6,8 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
+
 public class SideBar extends BasePage {
 
     @FindBy(id = "filter_inbox")
@@ -31,14 +33,16 @@ public class SideBar extends BasePage {
 
     private WebElement lblMenuProjectName;
 
+    @FindBy(css=".cmp_filter_today")
+    private WebElement imgToday;
+
     public WebElement getBtnInboxFilter() {
         return btnInboxFilter;
     }
 
     public SideBar clickOnLnkAddProject() {
-        if (lnkAddProject.isDisplayed() && lnkAddProject.isEnabled()) {
-            lnkAddProject.click();
-        }
+        wait.until(visibilityOf(lnkAddProject));
+        lnkAddProject.click();
         return this;
     }
 
@@ -92,5 +96,10 @@ public class SideBar extends BasePage {
     public SideBar clickOnBtnConfirmDelete() {
         btnConfirmDelete.click();
         return this;
+    }
+
+    public ProjectContainer clickOnImgToday() {
+        imgToday.click();
+        return new ProjectContainer();
     }
 }

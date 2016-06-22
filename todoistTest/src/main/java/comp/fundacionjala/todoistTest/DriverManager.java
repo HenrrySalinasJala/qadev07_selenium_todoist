@@ -7,7 +7,8 @@ import java.util.concurrent.TimeUnit;
 
 public class DriverManager {
 
-    public static final int IMPLICIT_WAIT_TIME = 7;
+    public static final int  WAIT_TIME = 30;
+    public static final int IMPLICIT_WAIT_TIME = 15;
 
     public static final int IMPLICIT_FAIL_WAIT_TIME = 4;
 
