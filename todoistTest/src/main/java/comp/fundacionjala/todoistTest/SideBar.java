@@ -13,7 +13,7 @@ public class SideBar extends BasePage {
     @FindBy(id = "filter_inbox")
     private WebElement btnInboxFilter;
 
-    @FindBy(xpath = "//*[@id=\"project_list_man\"]/div[1]/a")
+    @FindBy(xpath = "//a[@class='action sel_add_project' and not(ancestor::div[contains(@style, 'display: none;')])]")
     private WebElement lnkAddProject;
 
     @FindBy(className = "submit_btn")
@@ -28,7 +28,7 @@ public class SideBar extends BasePage {
     @FindBy(xpath = "//div[@id=\"GB_window\"]/descendant::span[text()=\"Ok\"]")
     private WebElement btnConfirmDelete;
 
-    @FindBy(xpath = "/html/body/div[5]/table/tbody/tr[4]/td/div/span")
+    @FindBy(xpath = "//div[@class=\"AmiMenu\"]/descendant::span[text()=\"Edit project\"]")
     private WebElement btnUpdateProjectContextOptionMenu;
 
     private WebElement lblMenuProjectName;
