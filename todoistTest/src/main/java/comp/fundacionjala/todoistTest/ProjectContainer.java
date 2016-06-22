@@ -42,4 +42,8 @@ public class ProjectContainer extends BasePage {
         lnkCancelTask.click();
         return new ProjectContainer();
     }
+
+    public boolean isProjectNameDisplayed() {
+        return lnkProjectName.isDisplayed();
+    }
 }
