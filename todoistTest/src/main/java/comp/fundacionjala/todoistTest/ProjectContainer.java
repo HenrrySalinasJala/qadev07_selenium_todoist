@@ -15,10 +15,13 @@ public class ProjectContainer extends BasePage {
     @FindBy(css = "div.controller.actions.pe_controller>a.action")
     private WebElement lnkAddTask;
 
+    @FindBy(className = "cancel")
+    private WebElement lnkCancelTask;
+
     private TodayPage todayPage;
 
-    public ProjectContainer(){
-        todayPage=new TodayPage();
+    public ProjectContainer() {
+        todayPage = new TodayPage();
     }
 
     public WebElement getLnkProjectName() {
@@ -33,5 +36,10 @@ public class ProjectContainer extends BasePage {
 
     public TodayPage getTodayPage() {
         return todayPage;
+    }
+
+    public ProjectContainer clickOnLnkCancelTask() {
+        lnkCancelTask.click();
+        return new ProjectContainer();
     }
 }

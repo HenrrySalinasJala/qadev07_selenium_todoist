@@ -25,7 +25,7 @@ public class ToolBar extends BasePage implements ITaskForm {
     @FindBy(id = "GB_frame")
     private WebElement settingsFrame;
 
-    @FindBy(css=".icon.fixed_pos.cmp_light_add_task")
+    @FindBy(css = ".icon.fixed_pos.cmp_light_add_task")
     private WebElement quickAddTaskIcon;
 
     public ToolBar clickOnBtnSettingsIcon() {

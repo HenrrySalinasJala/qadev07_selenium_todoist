@@ -33,7 +33,7 @@ public class SideBar extends BasePage {
 
     private WebElement lblMenuProjectName;
 
-    @FindBy(css=".cmp_filter_today")
+    @FindBy(css = ".cmp_filter_today")
     private WebElement imgToday;
 
     public WebElement getBtnInboxFilter() {

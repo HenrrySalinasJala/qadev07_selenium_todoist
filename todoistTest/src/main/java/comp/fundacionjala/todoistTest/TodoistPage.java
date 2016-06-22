@@ -36,5 +36,4 @@ public class TodoistPage extends BasePage {
         driver.switchTo().frame(loginFrame);
         return new LoginFrame();
     }
-
 }

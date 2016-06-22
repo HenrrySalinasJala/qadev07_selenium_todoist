@@ -6,9 +6,14 @@ import org.openqa.selenium.support.FindBy;
 import comp.fundacionjala.todoistTest.Task.ITaskForm;
 import comp.fundacionjala.todoistTest.Task.TaskForm;
 
-public class TodayPage extends BasePage implements ITaskForm{
-    @FindBy(css="li.add_task>a.action")
+public class TodayPage extends BasePage implements ITaskForm {
+
+    @FindBy(css = "li.add_task>a.action")
     private WebElement lnkAddTask;
+
+    public TodayPage() {
+
+    }
 
     public TaskForm clickOnLnkTodayAddTask() {
         lnkAddTask.click();
@@ -16,7 +21,6 @@ public class TodayPage extends BasePage implements ITaskForm{
     }
 
     public ProjectContainer createTask(String taskName) {
-        return clickOnLnkTodayAddTask().createTask(taskName);
+        return clickOnLnkTodayAddTask().createTask(taskName).clickOnLnkCancelTask();
     }
-
 }

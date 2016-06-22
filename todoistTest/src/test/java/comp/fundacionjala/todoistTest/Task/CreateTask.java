@@ -8,30 +8,40 @@ import comp.fundacionjala.todoistTest.LoginFrame;
 import comp.fundacionjala.todoistTest.TodayPage;
 import comp.fundacionjala.todoistTest.ToolBar;
 
+import static org.junit.Assert.assertTrue;
+
 public class CreateTask {
 
-    private HomePage homePage;
+    private static HomePage homePage;
+
+    private static Task task;
 
     private TaskForm taskform;
 
+    private String taskName;
+
+    private ITaskForm taskForm;
+
     @BeforeClass
-    public void setUp() {
+    public static void setUp() {
         final String username = "es.henrry@gmail.com";
         final String password = "TodoIst1234";
         homePage = LoginFrame.login(username, password);
     }
-    @Test
-    public void testCreateTaskByTodayPage(){
-        ITaskForm taskForm=new TodayPage();
-        String taskName = "new task 2222";
-        homePage.createTask(taskForm, taskName);
 
-    }
     @Test
-    public void testCreateTaskByQuickTaskIcon(){
-        ITaskForm taskForm=new ToolBar();
-        String taskName = "new task 333";
+    public void testCreateTaskByTodayPage() {
+        taskForm = new TodayPage();
+        taskName = "new task 2222";
         homePage.createTask(taskForm, taskName);
+        assertTrue(task.taskExists(taskName));
     }
-    //.items.day_list.ul_today
+
+    @Test
+    public void testCreateTaskByQuickTaskIcon() {
+        taskForm = new ToolBar();
+        taskName = "new task 333";
+        homePage.createTask(taskForm, taskName);
+        assertTrue(task.taskExists(taskName));
+    }
 }

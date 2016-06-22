@@ -11,7 +11,7 @@ public abstract class BasePage {
 
     protected WebDriver driver;
 
-    Actions action;
+    protected Actions action;
 
     WebDriverWait wait;
 
@@ -19,7 +19,7 @@ public abstract class BasePage {
         driver = DriverManager.getInstance().getDriver();
         PageFactory.initElements(driver, this);
         action = new Actions(driver);
-        wait=new WebDriverWait(driver,DriverManager.WAIT_TIME);
+        wait = new WebDriverWait(driver, DriverManager.WAIT_TIME);
     }
 
     public boolean webElementExists(WebElement webElement) {
