@@ -11,7 +11,7 @@ public class SettingsFrame extends BasePage {
     @FindBy(xpath = "//*[@id=\"user_info\"]/dl[2]/dd/span")
     private WebElement lblEmail;
 
-    @FindBy(xpath = "//*[@id=\"tabs\"]/li[2]/a")
+    @FindBy(xpath = "//ul[@id='tabs']/descendant::a[text()='Account']")
     private WebElement tabAccount;
 
     @FindBy(className = "cmp_small_close")

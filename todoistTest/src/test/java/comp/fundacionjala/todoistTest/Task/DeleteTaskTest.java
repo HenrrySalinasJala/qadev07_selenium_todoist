@@ -9,7 +9,7 @@ import comp.fundacionjala.todoistTest.TodayPage;
 
 import static org.junit.Assert.assertFalse;
 
-public class DeleteTask {
+public class DeleteTaskTest {
 
     private static HomePage homePage;
 

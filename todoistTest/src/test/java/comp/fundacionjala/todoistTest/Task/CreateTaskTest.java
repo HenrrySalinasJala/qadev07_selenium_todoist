@@ -10,7 +10,7 @@ import comp.fundacionjala.todoistTest.ToolBar;
 
 import static org.junit.Assert.assertTrue;
 
-public class CreateTask {
+public class CreateTaskTest {
 
     private static HomePage homePage;
 
