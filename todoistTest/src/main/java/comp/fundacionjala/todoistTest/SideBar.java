@@ -25,8 +25,6 @@ public class SideBar extends BasePage {
     @FindBy(id = "menu_delete_text")
     private WebElement btnDeleteProjectContextOptionMenu;
 
-    @FindBy(xpath = "//div[@id=\"GB_window\"]/descendant::span[text()=\"Ok\"]")
-    private WebElement btnConfirmDelete;
 
     @FindBy(xpath = "//div[@class=\"AmiMenu\"]/descendant::span[text()=\"Edit project\"]")
     private WebElement btnUpdateProjectContextOptionMenu;
@@ -46,11 +44,11 @@ public class SideBar extends BasePage {
         return this;
     }
 
-    public SideBar clickOnBtnAddProject() {
+    public ProjectContainer clickOnBtnAddProject() {
         if (btnAddProject.isDisplayed() && btnAddProject.isEnabled()) {
             btnAddProject.click();
         }
-        return this;
+        return new ProjectContainer();
     }
 
     public SideBar setTxtProjectName(String projectName) {
@@ -83,9 +81,9 @@ public class SideBar extends BasePage {
         return this;
     }
 
-    public SideBar clickOnBtnDeleteProjectContextOptionMenu() {
+    public DeleteAlert clickOnBtnDeleteProjectContextOptionMenu() {
         btnDeleteProjectContextOptionMenu.click();
-        return this;
+        return new DeleteAlert();
     }
 
     public SideBar clickOnBtnUpdateProjectContextOptionMenu() {
@@ -93,10 +91,6 @@ public class SideBar extends BasePage {
         return this;
     }
 
-    public SideBar clickOnBtnConfirmDelete() {
-        btnConfirmDelete.click();
-        return this;
-    }
 
     public ProjectContainer clickOnImgToday() {
         imgToday.click();

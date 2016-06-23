@@ -1,12 +1,14 @@
 package comp.fundacionjala.todoistTest;
 
+import comp.fundacionjala.todoistTest.Task.ITaskForm;
+import comp.fundacionjala.todoistTest.Task.TaskForm;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import comp.fundacionjala.todoistTest.Task.ITaskForm;
-import comp.fundacionjala.todoistTest.Task.TaskForm;
-import java.util.concurrent.TimeUnit;
+import static comp.fundacionjala.todoistTest.DriverManager.IMPLICIT_FAIL_WAIT_TIME;
+import static comp.fundacionjala.todoistTest.DriverManager.IMPLICIT_WAIT_TIME;
+import static java.util.concurrent.TimeUnit.SECONDS;
 
 public class ToolBar extends BasePage implements ITaskForm {
 
@@ -16,7 +18,7 @@ public class ToolBar extends BasePage implements ITaskForm {
     @FindBy(xpath = "/html/body/div[15]/table/tbody/tr[7]/td/div/span")
     private WebElement btnTodoistSettingsOptionMenu;
 
-    @FindBy(xpath = "/html/body/div[15]/table/tbody/tr[17]/td/div/span")
+    @FindBy(xpath = "//div[@class='AmiMenu']/descendant::span[text()='Log out']")
     private WebElement btnLogOutOptionMenu;
 
     @FindBy(className = "GB_frame")
@@ -31,12 +33,12 @@ public class ToolBar extends BasePage implements ITaskForm {
     public ToolBar clickOnBtnSettingsIcon() {
 
         try {
-            driver.manage().timeouts().implicitlyWait(DriverManager.IMPLICIT_FAIL_WAIT_TIME, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(IMPLICIT_FAIL_WAIT_TIME, SECONDS);
             btnSettingsIcon.click();
         } catch (NoSuchElementException e) {
 
         } finally {
-            driver.manage().timeouts().implicitlyWait(DriverManager.IMPLICIT_WAIT_TIME, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, SECONDS);
         }
         return this;
     }
@@ -44,7 +46,7 @@ public class ToolBar extends BasePage implements ITaskForm {
     public SettingsFrame clickOnBtnTodoistSettingsOptionMenu() {
         SettingsFrame settings = new SettingsFrame();
         try {
-            driver.manage().timeouts().implicitlyWait(DriverManager.IMPLICIT_FAIL_WAIT_TIME, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(IMPLICIT_FAIL_WAIT_TIME, SECONDS);
             btnTodoistSettingsOptionMenu.click();
             driver.switchTo().frame(settingsParentFrame);
             driver.switchTo().frame(settingsFrame);
@@ -52,7 +54,7 @@ public class ToolBar extends BasePage implements ITaskForm {
         } catch (NoSuchElementException e) {
 
         } finally {
-            driver.manage().timeouts().implicitlyWait(DriverManager.IMPLICIT_WAIT_TIME, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, SECONDS);
         }
         return settings;
     }

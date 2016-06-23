@@ -46,4 +46,9 @@ public class LoginFrame extends BasePage {
             return settingsFrame.closeSettingsWindow();
         }
     }
+    public static HomePage loginAsPrimaryUser(){
+        final String username = "es.henrry@gmail.com";
+        final String password = "TodoIst1234";
+        return login(username, password);
+    }
 }

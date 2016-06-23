@@ -1,42 +1,41 @@
 package comp.fundacionjala.todoistTest.Project;
 
+import comp.fundacionjala.todoistTest.DeleteAlert;
+import comp.fundacionjala.todoistTest.HomePage;
+import comp.fundacionjala.todoistTest.LoginFrame;
+import comp.fundacionjala.todoistTest.ProjectContainer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import comp.fundacionjala.todoistTest.HomePage;
-import comp.fundacionjala.todoistTest.LoginFrame;
 
 import static org.junit.Assert.assertTrue;
 
 public class CreateProjectTest {
 
-    private HomePage homePage;
+    private static final String PROJECT_NAME = "project test";
 
-    private String projectName = "project test";
+    private HomePage homePage;
 
     @Before
     public void setUp() {
-        final String username = "es.henrry@gmail.com";
-        final String password = "TodoIst1234";
-        homePage = LoginFrame.login(username, password);
+        homePage = LoginFrame.loginAsPrimaryUser();
     }
 
     @Test
     public void testCreateProject() {
-        homePage.getSideBar()
+        ProjectContainer projectContainer = homePage.getSideBar()
                 .clickOnLnkAddProject()
-                .setTxtProjectName(projectName)
+                .setTxtProjectName(PROJECT_NAME)
                 .clickOnBtnAddProject();
-        assertTrue(homePage.getProjectContainer().getLnkProjectName().isDisplayed());
+        assertTrue("", projectContainer.isProjectNameDisplayed());
     }
 
     @After
     public void tearDown() {
-        homePage.getSideBar()
-                .locateProjectByName(projectName)
+        DeleteAlert deleteAlert = homePage.getSideBar()
+                .locateProjectByName(PROJECT_NAME)
                 .openProjectContextMenu()
-                .clickOnBtnDeleteProjectContextOptionMenu()
-                .clickOnBtnConfirmDelete();
+                .clickOnBtnDeleteProjectContextOptionMenu();
+        deleteAlert.clickOnBtnConfirmDelete();
     }
 }
