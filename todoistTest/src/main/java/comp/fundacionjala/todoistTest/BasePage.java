@@ -13,7 +13,7 @@ public abstract class BasePage {
 
     protected Actions action;
 
-    WebDriverWait wait;
+    protected WebDriverWait wait;
 
     public BasePage() {
         driver = DriverManager.getInstance().getDriver();

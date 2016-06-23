@@ -35,9 +35,9 @@ public class UpdateProjectTest {
                 .openProjectContextMenu()
                 .clickOnBtnUpdateProjectContextOptionMenu()
                 .setTxtProjectName(expectedProjectNameUpdated)
-                .clickOnBtnAddProject()
-                .locateProjectByName(expectedProjectNameUpdated);
-        assertEquals(expectedProjectNameUpdated, homePage.getSideBar().getLblMenuProjectName().getText());
+                .clickOnBtnAddProject();
+        homePage.getSideBar().locateProjectByName(expectedProjectNameUpdated);
+        assertEquals("The project should be renamed",expectedProjectNameUpdated, homePage.getSideBar().getLblMenuProjectName());
     }
 
     @After

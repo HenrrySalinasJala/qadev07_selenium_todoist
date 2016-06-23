@@ -65,8 +65,8 @@ public class SideBar extends BasePage {
         return this;
     }
 
-    public WebElement getLblMenuProjectName() {
-        return lblMenuProjectName;
+    public String getLblMenuProjectName() {
+        return lblMenuProjectName.getText();
     }
 
     public SideBar openProjectContextMenu() {
@@ -95,5 +95,8 @@ public class SideBar extends BasePage {
     public ProjectContainer clickOnImgToday() {
         imgToday.click();
         return new ProjectContainer();
+    }
+    public WebElement getLblProjectName(){
+        return lblMenuProjectName;
     }
 }

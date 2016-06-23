@@ -1,12 +1,13 @@
 package comp.fundacionjala.todoistTest.Project;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
 import comp.fundacionjala.todoistTest.DeleteAlert;
 import comp.fundacionjala.todoistTest.HomePage;
 import comp.fundacionjala.todoistTest.LoginFrame;
 import comp.fundacionjala.todoistTest.ProjectContainer;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
@@ -27,7 +28,7 @@ public class CreateProjectTest {
                 .clickOnLnkAddProject()
                 .setTxtProjectName(PROJECT_NAME)
                 .clickOnBtnAddProject();
-        assertTrue("", projectContainer.isProjectNameDisplayed());
+        assertTrue("The project name should be displayed into project container page", projectContainer.isProjectNameDisplayed());
     }
 
     @After

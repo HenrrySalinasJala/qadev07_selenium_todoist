@@ -33,6 +33,7 @@ public class TaskForm extends BasePage {
     private WebElement lnkCancelTask;
 
     public TaskForm setTxtTaskName(String taskName) {
+        txtTaskName.clear();
         txtTaskName.sendKeys(taskName);
         return this;
     }

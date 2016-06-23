@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import comp.fundacionjala.todoistTest.HomePage;
 import comp.fundacionjala.todoistTest.LoginFrame;
+import comp.fundacionjala.todoistTest.SideBar;
 
 import static org.junit.Assert.assertFalse;
 
@@ -16,9 +17,7 @@ public class DeleteProjectTest {
 
     @Before
     public void setUp() {
-        final String username = "es.henrry@gmail.com";
-        final String password = "TodoIst1234";
-        homePage = LoginFrame.login(username, password);
+        homePage = LoginFrame.loginAsPrimaryUser();
         homePage.getSideBar()
                 .clickOnLnkAddProject()
                 .setTxtProjectName(projectName)
@@ -27,11 +26,11 @@ public class DeleteProjectTest {
 
     @Test
     public void testDeleteProject() {
-        homePage.getSideBar()
-                .locateProjectByName(projectName)
+        SideBar sideBar=homePage.getSideBar();
+        sideBar.locateProjectByName(projectName)
                 .openProjectContextMenu()
                 .clickOnBtnDeleteProjectContextOptionMenu()
                 .clickOnBtnConfirmDelete();
-        assertFalse(homePage.webElementExists(homePage.getSideBar().getLblMenuProjectName()));
+        assertFalse("The project should be deleted",homePage.webElementExists(sideBar.getLblProjectName()));
     }
 }

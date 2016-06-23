@@ -21,10 +21,7 @@ public class DeleteTaskTest {
 
     @BeforeClass
     public static void setUp() {
-        final String username = "es.henrry@gmail.com";
-        final String password = "TodoIst1234";
-        homePage = LoginFrame.login(username, password);
-
+        homePage = LoginFrame.loginAsPrimaryUser();
         task = new Task();
     }
 

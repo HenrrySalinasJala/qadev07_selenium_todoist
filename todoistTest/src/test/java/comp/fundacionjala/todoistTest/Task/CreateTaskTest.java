@@ -24,9 +24,8 @@ public class CreateTaskTest {
 
     @BeforeClass
     public static void setUp() {
-        final String username = "es.henrry@gmail.com";
-        final String password = "TodoIst1234";
-        homePage = LoginFrame.login(username, password);
+
+        homePage = LoginFrame.loginAsPrimaryUser();
     }
 
     @Test
@@ -34,7 +33,7 @@ public class CreateTaskTest {
         taskForm = new TodayPage();
         taskName = "new task 2222";
         homePage.createTask(taskForm, taskName);
-        assertTrue(task.taskExists(taskName));
+        assertTrue("The task created should be displayed",task.taskExists(taskName));
     }
 
     @Test
@@ -42,6 +41,6 @@ public class CreateTaskTest {
         taskForm = new ToolBar();
         taskName = "new task 333";
         homePage.createTask(taskForm, taskName);
-        assertTrue(task.taskExists(taskName));
+        assertTrue("The task created should be displayed",task.taskExists(taskName));
     }
 }
