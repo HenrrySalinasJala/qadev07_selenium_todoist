@@ -7,9 +7,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public class TodoistPage extends BasePage {
 
-    private static String BASE_URL = "https://.en.todoist.com";
-
-    @FindBy(xpath = "/html/body/div[1]/div/section[1]/div/ul/li[3]/a")
+    @FindBy(xpath = "//ul[@id='top_menu']//a[@class='sel_login']")
     private WebElement btnLogin;
 
     @FindBy(name = "GB_frame")

@@ -2,6 +2,7 @@ package com.fundacionjala.todoistTest;
 
 import com.fundacionjala.todoistTest.Task.ITaskForm;
 import com.fundacionjala.todoistTest.Task.TaskForm;
+
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,7 +16,7 @@ public class ToolBar extends BasePage implements ITaskForm {
     @FindBy(id = "gear_holder")
     private WebElement btnSettingsIcon;
 
-    @FindBy(xpath = "/html/body/div[15]/table/tbody/tr[7]/td/div/span")
+    @FindBy(xpath = "//span[text()='Todoist Settings']")
     private WebElement btnTodoistSettingsOptionMenu;
 
     @FindBy(xpath = "//div[@class='AmiMenu']/descendant::span[text()='Log out']")

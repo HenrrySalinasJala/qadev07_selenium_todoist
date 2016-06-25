@@ -11,7 +11,7 @@ public class LoginFrame extends BasePage {
     @FindBy(id = "password")
     private WebElement txtPassword;
 
-    @FindBy(xpath = "/html/body/div[1]/div/form/dl/dd[3]/a")
+    @FindBy(xpath = "//dd[@class='submit']//a[@class='amibutton amibutton_red sel_login']")
     private WebElement btnLogin;
 
     public LoginFrame setTxtEmail(String email) {

@@ -1,12 +1,13 @@
 package com.fundacionjala.todoistTest.Task;
 
+import com.fundacionjala.todoistTest.BasePage;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import com.fundacionjala.todoistTest.BasePage;
 import java.util.List;
 
 public class Task extends BasePage {
@@ -39,6 +40,7 @@ public class Task extends BasePage {
         try {
             getTaskList();
             WebElement task = taskList.findElement(By.xpath(taskXpath));
+            wait.until(ExpectedConditions.visibilityOf(task));
             if (task.isDisplayed()) {
                 exists = true;
             }
@@ -52,6 +54,7 @@ public class Task extends BasePage {
         String taskXpath = new StringBuilder().append(".//span[text()='").append(taskName).append("']").toString();
         getTaskList();
         WebElement task = taskList.findElement(By.xpath(taskXpath));
+        wait.until(ExpectedConditions.visibilityOf(task));
         action.contextClick(task)
                 .build()
                 .perform();
@@ -72,6 +75,7 @@ public class Task extends BasePage {
         String taskXpath = new StringBuilder().append(".//span[text()='").append(taskName).append("']").toString();
         getTaskList();
         WebElement task = taskList.findElement(By.xpath(taskXpath));
+        wait.until(ExpectedConditions.visibilityOf(task));
         action.contextClick(task)
                 .build()
                 .perform();

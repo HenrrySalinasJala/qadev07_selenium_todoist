@@ -5,9 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-/**
- * Created by Administrator on 6/23/2016.
- */
 public class PropertiesInfo {
 
     private static PropertiesInfo instance;
@@ -45,7 +42,7 @@ public class PropertiesInfo {
         return  properties.getProperty("email");
     }
     public  String getPassword(){
-        return  properties.getProperty("[assword");
+        return  properties.getProperty("password");
     }
     public  String getUrl(){
         return  properties.getProperty("url");

@@ -1,9 +1,10 @@
 package com.fundacionjala.todoistTest;
 
-import java.util.concurrent.TimeUnit;
-
 import com.fundacionjala.todoistTest.driver.FactoryDriver;
+
 import org.openqa.selenium.WebDriver;
+
+import java.util.concurrent.TimeUnit;
 
 public class DriverManager {
 
@@ -13,9 +14,6 @@ public class DriverManager {
 
     public static final int IMPLICIT_FAIL_WAIT_TIME = 4;
 
-    public static final String BROWSER = "chrome";
-
-    private static String driverPath = ".\\lib\\";
 
     private static DriverManager instance;
 
@@ -33,7 +31,7 @@ public class DriverManager {
     }
 
     private void initWebDriver() {
-        driver = FactoryDriver.getDriver(BROWSER).initDriver();
+        driver = FactoryDriver.getDriver(PropertiesInfo.getInstance().getBrowser()).initDriver();
 
         driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, TimeUnit.SECONDS);
         driver.manage().window().maximize();

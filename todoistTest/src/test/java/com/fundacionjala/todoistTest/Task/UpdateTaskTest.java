@@ -1,36 +1,46 @@
 package com.fundacionjala.todoistTest.Task;
 
-import com.fundacionjala.todoistTest.TodayPage;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
 import com.fundacionjala.todoistTest.HomePage;
 import com.fundacionjala.todoistTest.LoginFrame;
+import com.fundacionjala.todoistTest.TodayPage;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
 public class UpdateTaskTest {
-    private static HomePage homePage;
 
-    private static String taskName;
+    private HomePage homePage;
 
-    private static Task task;
+    private String taskName;
+
+    private String newTaskName;
+
+    private Task task;
 
     private ITaskForm taskForm;
 
-    @BeforeClass
-    public static void setUp() {
+    @Before
+    public void setUp() {
+        taskName = "new task 4444";
+        newTaskName = "new task 555";
         homePage = LoginFrame.loginAsPrimaryUser();
         task = new Task();
+        taskForm = new TodayPage();
+        homePage.createTask(taskForm, taskName);
     }
 
     @Test
     public void testUpdateTaskFromTodayPage() {
-        taskForm = new TodayPage();
-        taskName = "new task 4444";
-        homePage.createTask(taskForm, taskName);
-        String newTaskName = "new task 555";
-        task.updateTaskName(taskName,newTaskName);
+
+        task.updateTaskName(taskName, newTaskName);
         assertTrue(task.taskExists(newTaskName));
+    }
+
+    @After
+    public void tearDown() {
+        task.deleteTask(newTaskName);
     }
 }
