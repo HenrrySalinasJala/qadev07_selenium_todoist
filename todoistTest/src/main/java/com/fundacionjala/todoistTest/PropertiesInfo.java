@@ -11,43 +11,47 @@ public class PropertiesInfo {
 
     private Properties properties;
 
-    private PropertiesInfo(){
+    private PropertiesInfo() {
         loadProperties();
-
     }
+
     public static PropertiesInfo getInstance() {
         if (instance == null) {
             instance = new PropertiesInfo();
         }
         return instance;
     }
-    public void loadProperties(){
-        properties=new Properties();
+
+    public void loadProperties() {
+        properties = new Properties();
         try {
-            FileInputStream fileInputStream=new FileInputStream(".//todoist.properties");
+            FileInputStream fileInputStream = new FileInputStream(".//todoist.properties");
             properties.load(fileInputStream);
             fileInputStream.close();
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
-    public String getProperty(String propertyKey){
+
+    public String getProperty(String propertyKey) {
         return properties.getProperty(propertyKey);
     }
-    public  String getEmail(){
-        return  properties.getProperty("email");
+
+    public String getEmail() {
+        return properties.getProperty("email");
     }
-    public  String getPassword(){
-        return  properties.getProperty("password");
+
+    public String getPassword() {
+        return properties.getProperty("password");
     }
-    public  String getUrl(){
-        return  properties.getProperty("url");
+
+    public String getUrl() {
+        return properties.getProperty("url");
     }
-    public  String getBrowser(){
-        return  properties.getProperty("browser");
+
+    public String getBrowser() {
+        return properties.getProperty("browser");
     }
 }

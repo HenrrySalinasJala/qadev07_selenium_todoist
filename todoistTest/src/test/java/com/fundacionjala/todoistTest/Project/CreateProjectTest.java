@@ -2,12 +2,12 @@ package com.fundacionjala.todoistTest.project;
 
 import com.fundacionjala.todoistTest.DeleteAlert;
 import com.fundacionjala.todoistTest.HomePage;
+import com.fundacionjala.todoistTest.LoginFrame;
 import com.fundacionjala.todoistTest.ProjectContainer;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import com.fundacionjala.todoistTest.LoginFrame;
 
 import static org.junit.Assert.assertTrue;
 

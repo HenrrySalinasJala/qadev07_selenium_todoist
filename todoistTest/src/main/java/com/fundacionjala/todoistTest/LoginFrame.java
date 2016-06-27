@@ -46,7 +46,8 @@ public class LoginFrame extends BasePage {
             return settingsFrame.closeSettingsWindow();
         }
     }
-    public static HomePage loginAsPrimaryUser(){
+
+    public static HomePage loginAsPrimaryUser() {
         final String username = PropertiesInfo.getInstance().getEmail();
         final String password = PropertiesInfo.getInstance().getPassword();
         return login(username, password);

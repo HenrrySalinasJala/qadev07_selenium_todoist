@@ -1,19 +1,17 @@
-package com.fundacionjala.todoistTest;
+package com.fundacionjala.todoistTest.factory;
 
-import com.fundacionjala.todoistTest.factory.IPage;
+import com.fundacionjala.todoistTest.BasePage;
+import com.fundacionjala.todoistTest.ProjectContainer;
 import com.fundacionjala.todoistTest.task.ITaskForm;
 import com.fundacionjala.todoistTest.task.TaskForm;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class TodayPage extends BasePage implements ITaskForm,IPage {
+public class TodayPage extends BasePage implements ITaskForm, IPage {
 
     @FindBy(css = "li.add_task>a.action")
     private WebElement lnkAddTask;
-
-    public TodayPage() {
-
-    }
 
     public TaskForm clickOnLnkTodayAddTask() {
         lnkAddTask.click();

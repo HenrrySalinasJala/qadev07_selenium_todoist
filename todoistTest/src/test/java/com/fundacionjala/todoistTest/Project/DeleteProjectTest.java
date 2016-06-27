@@ -1,11 +1,11 @@
 package com.fundacionjala.todoistTest.project;
 
-import org.junit.Before;
-import org.junit.Test;
-
 import com.fundacionjala.todoistTest.HomePage;
 import com.fundacionjala.todoistTest.LoginFrame;
 import com.fundacionjala.todoistTest.SideBar;
+
+import org.junit.Before;
+import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
 
@@ -26,11 +26,11 @@ public class DeleteProjectTest {
 
     @Test
     public void testDeleteProject() {
-        SideBar sideBar=homePage.getSideBar();
+        SideBar sideBar = homePage.getSideBar();
         sideBar.locateProjectByName(projectName)
                 .openProjectContextMenu()
                 .clickOnBtnDeleteProjectContextOptionMenu()
                 .clickOnBtnConfirmDelete();
-        assertFalse("The project should be deleted",homePage.webElementExists(sideBar.getLblProjectName()));
+        assertFalse("The project should be deleted", homePage.webElementExists(sideBar.getLblProjectName()));
     }
 }

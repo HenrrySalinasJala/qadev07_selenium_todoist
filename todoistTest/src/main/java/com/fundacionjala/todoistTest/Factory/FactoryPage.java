@@ -1,8 +1,6 @@
 package com.fundacionjala.todoistTest.factory;
 
-
-public abstract class PageFactory {
+public abstract class FactoryPage {
 
     public abstract IPage createPage();
-    
 }

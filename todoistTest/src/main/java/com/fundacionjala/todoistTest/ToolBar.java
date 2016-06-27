@@ -7,8 +7,8 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.fundacionjala.todoistTest.DriverManager.IMPLICIT_FAIL_WAIT_TIME;
-import static com.fundacionjala.todoistTest.DriverManager.IMPLICIT_WAIT_TIME;
+import static com.fundacionjala.todoistTest.driver.DriverManager.IMPLICIT_FAIL_WAIT_TIME;
+import static com.fundacionjala.todoistTest.driver.DriverManager.IMPLICIT_WAIT_TIME;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 public class ToolBar extends BasePage implements ITaskForm {

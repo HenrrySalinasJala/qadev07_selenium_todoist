@@ -1,6 +1,6 @@
-package com.fundacionjala.todoistTest;
+package com.fundacionjala.todoistTest.driver;
 
-import com.fundacionjala.todoistTest.driver.FactoryDriver;
+import com.fundacionjala.todoistTest.PropertiesInfo;
 
 import org.openqa.selenium.WebDriver;
 
@@ -13,7 +13,6 @@ public class DriverManager {
     public static final int IMPLICIT_WAIT_TIME = 15;
 
     public static final int IMPLICIT_FAIL_WAIT_TIME = 4;
-
 
     private static DriverManager instance;
 

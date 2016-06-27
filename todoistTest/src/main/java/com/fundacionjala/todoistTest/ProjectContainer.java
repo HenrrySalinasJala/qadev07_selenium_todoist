@@ -1,8 +1,9 @@
 package com.fundacionjala.todoistTest;
 
+import com.fundacionjala.todoistTest.factory.FactoryPage;
 import com.fundacionjala.todoistTest.factory.IPage;
-import com.fundacionjala.todoistTest.factory.PageFactory;
 import com.fundacionjala.todoistTest.factory.PageGenerator;
+import com.fundacionjala.todoistTest.factory.TodayPage;
 import com.fundacionjala.todoistTest.task.TaskForm;
 
 import org.openqa.selenium.WebElement;
@@ -37,9 +38,9 @@ public class ProjectContainer extends BasePage {
         return new TaskForm();
     }
 
-    public IPage loadPage(PageFactory pageFactory) {
+    public IPage loadPage(FactoryPage factoryPage) {
         PageGenerator pageGenerator = new PageGenerator();
-        return pageGenerator.generatePage(pageFactory);
+        return pageGenerator.generatePage(factoryPage);
     }
 
     public TodayPage getTodayPage() {

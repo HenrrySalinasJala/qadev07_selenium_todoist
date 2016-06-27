@@ -25,7 +25,6 @@ public class SideBar extends BasePage {
     @FindBy(id = "menu_delete_text")
     private WebElement btnDeleteProjectContextOptionMenu;
 
-
     @FindBy(xpath = "//div[@class=\"AmiMenu\"]/descendant::span[text()=\"Edit project\"]")
     private WebElement btnUpdateProjectContextOptionMenu;
 
@@ -33,6 +32,9 @@ public class SideBar extends BasePage {
 
     @FindBy(css = ".cmp_filter_today")
     private WebElement imgToday;
+
+    @FindBy(css = ".cmp_filter_inbox")
+    private WebElement imgInbox;
 
     public WebElement getBtnInboxFilter() {
         return btnInboxFilter;
@@ -91,12 +93,17 @@ public class SideBar extends BasePage {
         return this;
     }
 
-
     public ProjectContainer clickOnImgToday() {
         imgToday.click();
         return new ProjectContainer();
     }
-    public WebElement getLblProjectName(){
+
+    public ProjectContainer clickOnImgInbox() {
+        imgInbox.click();
+        return new ProjectContainer();
+    }
+
+    public WebElement getLblProjectName() {
         return lblMenuProjectName;
     }
 }

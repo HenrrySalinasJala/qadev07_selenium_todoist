@@ -2,7 +2,7 @@ package com.fundacionjala.todoistTest.task;
 
 import com.fundacionjala.todoistTest.HomePage;
 import com.fundacionjala.todoistTest.LoginFrame;
-import com.fundacionjala.todoistTest.TodayPage;
+import com.fundacionjala.todoistTest.factory.TodayPage;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
