@@ -1,4 +1,4 @@
-package com.fundacionjala.todoistTest.Project;
+package com.fundacionjala.todoistTest.project;
 
 import com.fundacionjala.todoistTest.DeleteAlert;
 import com.fundacionjala.todoistTest.HomePage;

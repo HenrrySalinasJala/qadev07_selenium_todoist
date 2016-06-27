@@ -1,6 +1,6 @@
 package com.fundacionjala.todoistTest;
 
-import com.fundacionjala.todoistTest.Task.ITaskForm;
+import com.fundacionjala.todoistTest.task.ITaskForm;
 
 public class HomePage extends BasePage {
 

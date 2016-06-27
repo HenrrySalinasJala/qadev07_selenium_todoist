@@ -1,11 +1,11 @@
-package com.fundacionjala.todoistTest.Task;
-
-import com.fundacionjala.todoistTest.TodayPage;
-import org.junit.BeforeClass;
-import org.junit.Test;
+package com.fundacionjala.todoistTest.task;
 
 import com.fundacionjala.todoistTest.HomePage;
 import com.fundacionjala.todoistTest.LoginFrame;
+import com.fundacionjala.todoistTest.TodayPage;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
 

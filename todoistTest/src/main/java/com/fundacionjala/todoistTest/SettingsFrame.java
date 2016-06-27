@@ -4,7 +4,9 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.concurrent.TimeUnit;
+import static com.fundacionjala.todoistTest.DriverManager.IMPLICIT_FAIL_WAIT_TIME;
+import static com.fundacionjala.todoistTest.DriverManager.IMPLICIT_WAIT_TIME;
+import static java.util.concurrent.TimeUnit.SECONDS;
 
 public class SettingsFrame extends BasePage {
 
@@ -20,12 +22,12 @@ public class SettingsFrame extends BasePage {
     public SettingsFrame clickOnTabAccount() {
         
         try {
-            driver.manage().timeouts().implicitlyWait(DriverManager.IMPLICIT_FAIL_WAIT_TIME, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(IMPLICIT_FAIL_WAIT_TIME, SECONDS);
             tabAccount.click();
         } catch (NoSuchElementException e) {
 
         } finally {
-            driver.manage().timeouts().implicitlyWait(DriverManager.IMPLICIT_WAIT_TIME, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, SECONDS);
         }
         
         return this;
@@ -34,12 +36,12 @@ public class SettingsFrame extends BasePage {
     public String getLblEmail() {
         String email = "";
         try {
-            driver.manage().timeouts().implicitlyWait(DriverManager.IMPLICIT_FAIL_WAIT_TIME, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(IMPLICIT_FAIL_WAIT_TIME, SECONDS);
             email = lblEmail.getText();
         } catch (NoSuchElementException e) {
 
         } finally {
-            driver.manage().timeouts().implicitlyWait(DriverManager.IMPLICIT_WAIT_TIME, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, SECONDS);
         }
         return email;
     }

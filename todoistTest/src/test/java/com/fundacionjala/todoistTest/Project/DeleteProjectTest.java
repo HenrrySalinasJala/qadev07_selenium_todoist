@@ -1,4 +1,4 @@
-package com.fundacionjala.todoistTest.Project;
+package com.fundacionjala.todoistTest.project;
 
 import org.junit.Before;
 import org.junit.Test;

@@ -1,11 +1,11 @@
-package com.fundacionjala.todoistTest.Project;
+package com.fundacionjala.todoistTest.project;
+
+import com.fundacionjala.todoistTest.HomePage;
+import com.fundacionjala.todoistTest.LoginFrame;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import com.fundacionjala.todoistTest.HomePage;
-import com.fundacionjala.todoistTest.LoginFrame;
 
 import static org.junit.Assert.assertEquals;
 
@@ -19,9 +19,8 @@ public class UpdateProjectTest {
 
     @Before
     public void setUp() {
-        final String username = "es.henrry@gmail.com";
-        final String password = "TodoIst1234";
-        homePage = LoginFrame.login(username, password);
+
+        homePage = LoginFrame.loginAsPrimaryUser();
         homePage.getSideBar()
                 .clickOnLnkAddProject()
                 .setTxtProjectName(projectName)

@@ -1,4 +1,4 @@
-package com.fundacionjala.todoistTest.Task;
+package com.fundacionjala.todoistTest.task;
 
 import com.fundacionjala.todoistTest.ProjectContainer;
 

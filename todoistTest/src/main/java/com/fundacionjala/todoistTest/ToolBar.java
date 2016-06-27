@@ -1,7 +1,7 @@
 package com.fundacionjala.todoistTest;
 
-import com.fundacionjala.todoistTest.Task.ITaskForm;
-import com.fundacionjala.todoistTest.Task.TaskForm;
+import com.fundacionjala.todoistTest.task.ITaskForm;
+import com.fundacionjala.todoistTest.task.TaskForm;
 
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;

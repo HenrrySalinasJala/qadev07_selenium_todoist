@@ -1,4 +1,4 @@
-package com.fundacionjala.todoistTest.Factory;
+package com.fundacionjala.todoistTest.factory;
 
 
 public abstract class PageFactory {

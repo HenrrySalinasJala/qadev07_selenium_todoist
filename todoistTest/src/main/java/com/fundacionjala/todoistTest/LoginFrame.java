@@ -47,8 +47,8 @@ public class LoginFrame extends BasePage {
         }
     }
     public static HomePage loginAsPrimaryUser(){
-        final String username = "es.henrry@gmail.com";
-        final String password = "TodoIst1234";
+        final String username = PropertiesInfo.getInstance().getEmail();
+        final String password = PropertiesInfo.getInstance().getPassword();
         return login(username, password);
     }
 }

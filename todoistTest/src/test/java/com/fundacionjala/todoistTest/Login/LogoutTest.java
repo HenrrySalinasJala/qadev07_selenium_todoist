@@ -1,12 +1,11 @@
-package com.fundacionjala.todoistTest.Login;
-
-import org.junit.Before;
-import org.junit.Test;
+package com.fundacionjala.todoistTest.login;
 
 import com.fundacionjala.todoistTest.HomePage;
 import com.fundacionjala.todoistTest.LogOutPage;
 import com.fundacionjala.todoistTest.LoginFrame;
-import com.fundacionjala.todoistTest.TodoistPage;
+
+import org.junit.Before;
+import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
@@ -14,13 +13,9 @@ public class LogoutTest {
 
     private HomePage homePage;
 
-    private TodoistPage indexPage;
-
     @Before
     public void setUp() {
-        final String username = "es.henrry@gmail.com";
-        final String password = "TodoIst1234";
-        homePage = LoginFrame.login(username, password);
+        homePage = LoginFrame.loginAsPrimaryUser();
         assertTrue(homePage.getSideBar().getBtnInboxFilter().isDisplayed());
     }
 

@@ -1,4 +1,4 @@
-package com.fundacionjala.todoistTest.Task;
+package com.fundacionjala.todoistTest.task;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

@@ -1,6 +1,10 @@
 package com.fundacionjala.todoistTest;
 
-import com.fundacionjala.todoistTest.Task.TaskForm;
+import com.fundacionjala.todoistTest.factory.IPage;
+import com.fundacionjala.todoistTest.factory.PageFactory;
+import com.fundacionjala.todoistTest.factory.PageGenerator;
+import com.fundacionjala.todoistTest.task.TaskForm;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -31,6 +35,11 @@ public class ProjectContainer extends BasePage {
         wait.until(visibilityOf(lnkAddTask));
         lnkAddTask.click();
         return new TaskForm();
+    }
+
+    public IPage loadPage(PageFactory pageFactory) {
+        PageGenerator pageGenerator = new PageGenerator();
+        return pageGenerator.generatePage(pageFactory);
     }
 
     public TodayPage getTodayPage() {
