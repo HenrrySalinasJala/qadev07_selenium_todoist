@@ -50,8 +50,22 @@ public class PropertiesInfo {
     public String getUrl() {
         return properties.getProperty("url");
     }
-
     public String getBrowser() {
         return properties.getProperty("browser");
+    }
+    public String getRemoteBrowser() {
+        return properties.getProperty("remoteBrowser");
+    }
+    public String getSauceUser() {
+        return properties.getProperty("sauceUser");
+    }
+    public String getSauceKey() {
+        return properties.getProperty("sauceAccessKey");
+    }
+    public String getBrowserVersion() {
+        return properties.getProperty("browserVersion");
+    }
+    public String getPlatform() {
+        return properties.getProperty("platform");
     }
 }

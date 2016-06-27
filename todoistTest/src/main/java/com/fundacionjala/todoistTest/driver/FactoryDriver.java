@@ -7,6 +7,7 @@ public final class FactoryDriver {
     public static final String CHROME = "chrome";
 
     public static final String FIREFOX = "firefox";
+    public static final String REMOTE = "remote";
 
     private FactoryDriver() {
     }
@@ -16,7 +17,9 @@ public final class FactoryDriver {
             return new Chrome();
         } else if (FIREFOX.equals(browser)) {
             return new Firefox();
-        } else {
+        } else if(REMOTE.equals(browser)){
+            return new RemoteBrowser();
+        }else {
             throw new WebDriverException("Browser not found : " + browser);
         }
     }
